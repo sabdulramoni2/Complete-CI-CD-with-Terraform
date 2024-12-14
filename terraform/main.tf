@@ -1,14 +1,11 @@
 provider "aws" {
-  region = "us-east-2"
+  region = var.region
 }
-variable vpc_cidr_blocks {}
-variable  subnet_cidr_block{}
-variable avail_zone {}
-variable env_prefix {}
-variable  my_ip {}
-variable  instance_type {}
-variable public_key_location {}
-variable private_key_location {}
+variable vpc_cidr_blocks {
+  default = "10.0.0.0/16"
+}
+
+
 
 resource "aws_vpc" "myapp-vpc" {
   cidr_block = var.vpc_cidr_blocks
@@ -115,15 +112,6 @@ data "aws_ami" "latest-amazon-linux-image" {
   }
 }
 
-output "aws-ami_id" {
-  value = data.aws_ami.latest-amazon-linux-image.id
-}
-
-output "ec2-public_ip" {
-  value = aws_instance.myapp-server.public_ip
-}
-
-
 
 resource "aws_instance" "myapp-server" {
   ami = data.aws_ami.latest-amazon-linux-image.id
@@ -137,41 +125,20 @@ resource "aws_instance" "myapp-server" {
   key_name = "docker-server1"
 
 
-  # user_data = file("entry-script.sh")
+  user_data = file("entry-script.sh")
 
   user_data_replace_on_change = true
-
-  connection {
-    type = "ssh"
-    host = self.public_ip
-    user = "ec2-user"
-    private_key = file(var.private_key_location)
-  }
-
-
-  provisioner "file" {
-    source = "entry-script.sh"
-    destination = "/home/ec2-user/entry-script-on-ec2.sh"
-  }
-
-
-  provisioner "remote-exec" {
-    script= "entry-script.sh"
-  }
-
-
-
-  provisioner "local-exec" {
-    command = "echo ${self.public_ip} > output.txt"
-  }
-
 
   tags = {
     Name: "${var.env_prefix}-server"
   }
 
 
+}
 
+
+output "ec2-public_ip" {
+  value = aws_instance.myapp-server.public_ip
 }
 
 
