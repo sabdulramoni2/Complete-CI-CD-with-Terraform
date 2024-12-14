@@ -75,7 +75,7 @@ pipeline {
                         sh 'git commit -m "ci: version bump"'
                         sh 'git push origin HEAD:main'
                         sh 'git config --global user.email "abdulramonisaidi@yahoo.com"'
-                        sh 'git config --global user.name "sbdulramoni2@"'
+                        sh 'git config --global user.name "saidi'
                     }
                 }
             }
