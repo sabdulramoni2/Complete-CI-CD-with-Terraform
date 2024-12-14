@@ -113,21 +113,13 @@ data "aws_ami" "latest-amazon-linux-image" {
 }
 
 
-resource "aws_ebs_volume" "my_volume" {
-  availability_zone = "us-east-2a"
-  size              = 100 # Initial size in GiB
-  type              = "gp2" 
-}
 
 
 resource "aws_instance" "myapp-server" {
   ami = data.aws_ami.latest-amazon-linux-image.id
   instance_type = var.instance_type
 
-  root_block_device {
-    volume_id = aws_ebs_volume.my_volume.id
-    device_name = "/dev/sda1"
-  }
+  root_block_device { volume_size = 50  }
 
   subnet_id = aws_subnet.myapp-subnet-1.id
   vpc_security_group_ids = [aws_default_security_group.default-sg.id]
