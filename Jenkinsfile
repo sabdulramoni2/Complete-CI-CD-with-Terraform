@@ -69,7 +69,7 @@ pipeline {
         stage('commit version update'){
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'git-credentials', passwordVariable: 'PASS', usernameVariable: 'USER')]){
+                    withCredentials([usernamePassword(credentialsId: 'github-token', passwordVariable: 'PASS', usernameVariable: 'USER')]){
                         sh 'git config --global user.email "abdulramonisaidi@yahoo.com"'
                         sh 'git config --global user.name "saidi"'
                         sh 'git remote set-url origin https://$USER:$PASS@github.com/sabdulramoni2/Complete-CI-CD-with-Terraform1.git'
