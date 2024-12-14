@@ -47,14 +47,43 @@ pipeline {
                     dockerPush(env.IMAGE_NAME)
                 }
             }
-        } 
+        }
+
+            stage("provision server") {
+      environment {
+        AWS_ACCESS_KEY_ID = credentials('jenkins_aws_access_key_id')
+        AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws_secret_access_key')
+        TF_VAR_env_prefix = 'test'
+      }
+      steps {
+        script {
+          dir('terraform') {
+            sh "terraform init"
+            sh "terraform apply --auto-approve"
+            EC2_PUBLIC_IP = sh(
+              script: "terraform output ec2-public_ip",
+              returnStdout: true
+            ).trim()
+          }
+        }
+      }
+    }
+ 
         stage("deploy") {
+            environment {
+        DOCKER_CREDS = credentials('docker-hub-repo')
+      }
+
             steps {
                 script {
-                    echo 'deploying docker image to EC2...'
+                    echo "waiting for EC2 server to initialize"
+                    sleep(time: 90, unit: "SECONDS")
 
-                    def shellCmd = "bash ./server-cmds.sh ${IMAGE_NAME}"
-                    def ec2Instance = "ec2-user@18.226.222.195"
+                    echo 'deploying docker image to EC2...'
+                     echo "${EC2_PUBLIC_IP}"
+
+                    def shellCmd = "bash ./server-cmds.sh ${IMAGE_NAME} ${DOCKER_CREDS_USR} ${DOCKER_CREDS_PSW}"
+                    def ec2Instance = "ec2-user@${EC2_PUBLIC_IP}"
 
                     sshagent(['ec2-server-key']) {
                         

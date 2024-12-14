@@ -16,3 +16,7 @@ variable  instance_type {
 variable region {
   default = "us-east-2"
 }
+
+variable jenkins_ip {
+  default = "138.197.118.132/32"
+}
