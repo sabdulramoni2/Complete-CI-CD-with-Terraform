@@ -69,7 +69,7 @@ pipeline {
         stage('commit version update'){
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'gitlab-credentials', passwordVariable: 'PASS', usernameVariable: 'USER')]){
+                    withCredentials([usernamePassword(credentialsId: 'github-token', passwordVariable: 'PASS', usernameVariable: 'USER')]){
                         sh 'git remote set-url origin https://$USER:$PASS@https://github.com/sabdulramoni2/Complete-CI-CD-with-Terraform1.git'
                         sh 'git add .'
                         sh 'git commit -m "ci: version bump"'
