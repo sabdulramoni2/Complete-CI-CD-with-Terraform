@@ -14,7 +14,7 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = 'ashiwaju/jupiter12:java-maven-2.0'
+        IMAGE_NAME = 'ashiwaju/jupiter12:latest'
     }
 
     
