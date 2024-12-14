@@ -114,7 +114,7 @@ data "aws_ami" "latest-amazon-linux-image" {
 
 
 resource "aws_ebs_volume" "my_volume" {
-  availability_zone = "your-availability-zone"
+  availability_zone = "us-east-2"
   size              = 100 # Initial size in GiB
   type              = "gp2" 
 }
