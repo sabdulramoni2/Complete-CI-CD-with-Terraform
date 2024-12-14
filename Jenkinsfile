@@ -57,9 +57,10 @@ pipeline {
                     def ec2Instance = "ec2-user@18.226.222.195"
 
                     sshagent(['ec2-server-key']) {
-                        sh "ssh -o StrictHostKeyChecking=no ${ec2Instance} ${shellCmd}"
+                        
                         sh "scp server-cmds.sh ${ec2Instance}:/home/ec2-user"
                         sh "scp docker-compose.yaml ${ec2Instance}:/home/ec2-user"
+                        sh "ssh -o StrictHostKeyChecking=no ${ec2Instance} ${shellCmd}"
                         
                     }
                 }
