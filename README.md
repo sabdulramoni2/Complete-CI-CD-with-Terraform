@@ -29,6 +29,18 @@ This project demonstrates completes CICD with terraform.
 - Download Terafform from the official website
   ![image](https://github.com/user-attachments/assets/b820b21f-cb27-4d82-8ed4-d97444bf7f4b)
 
+- Run apt-get update
+  ![image](https://github.com/user-attachments/assets/67220110-ece7-4cfb-91ba-92c071e386c9)
+
+- Run the following command
+  ```
+      wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+
+      echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+  ```
+  
+
+
 
 
 - Created Terraform configuration files to provision an ec2 server
