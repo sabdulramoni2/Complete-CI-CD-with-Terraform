@@ -50,7 +50,7 @@ This project demonstrates completes CICD with terraform.
   ```
 
 
-
+    ![image](https://github.com/user-attachments/assets/9759746d-d20d-4b3a-b924-76c327de3f6a)
 
 
 - Created Terraform configuration files to provision an ec2 server
