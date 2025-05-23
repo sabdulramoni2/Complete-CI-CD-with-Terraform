@@ -39,6 +39,16 @@ This project demonstrates completes CICD with terraform.
       echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
   ```
   
+   ![image](https://github.com/user-attachments/assets/af6fb77b-2254-43a2-be69-6e1be4aad1cd)
+
+   ![image](https://github.com/user-attachments/assets/78cbf3bd-f7c4-40f0-a0e2-a3307a0686a5)
+
+
+- Install Terraform
+  ```
+      sudo apt update && sudo apt install terraform
+  ```
+
 
 
 
