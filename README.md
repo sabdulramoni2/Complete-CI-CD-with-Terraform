@@ -48,7 +48,7 @@ This project demonstrates completes CICD with terraform.
 - Ec2 created on AWS
   ![image](https://github.com/user-attachments/assets/4b276e0e-9f9c-4934-8f54-bb699ad3d539)
 
-
+- Application successfully deployed on ec2 instance
 
   ![image](https://github.com/user-attachments/assets/ec5869f9-08f4-4cd9-84ea-a4fea9cdd84c)
 
