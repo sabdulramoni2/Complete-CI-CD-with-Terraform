@@ -25,6 +25,13 @@ This project demonstrates completes CICD with terraform.
 - Installed Terraform inside Jenkins Container
   ![image](https://github.com/user-attachments/assets/c63e7460-2676-4b2e-bba4-73522e7b8e2a)
 
+  ![image](https://github.com/user-attachments/assets/683a064d-dbfe-4e76-95ce-36b0dd179c78)
+
+- Download Terafform from the official website
+  ![image](https://github.com/user-attachments/assets/b820b21f-cb27-4d82-8ed4-d97444bf7f4b)
+
+
+
 - Created Terraform configuration files to provision an ec2 server
 - Created entry-script.sh file to install docker, docker-compose and start containers through docker-compose command
 - Adjusted Jenkinsfile to include provision and deployment stage
