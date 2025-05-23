@@ -48,6 +48,28 @@ This project demonstrates completes CICD with terraform.
 
   ![image](https://github.com/user-attachments/assets/dfe42338-9af8-493f-a162-502d8b3e03bf)
 
+  ![image](https://github.com/user-attachments/assets/a614088f-a845-4dda-8591-b1837a13412b)
+  
+  ![image](https://github.com/user-attachments/assets/05fa23be-403c-4885-99df-046106928e7d)
+
+  ![image](https://github.com/user-attachments/assets/9d2e8fac-c7a6-4049-a682-bf7e2d570f93)
+
+  ![image](https://github.com/user-attachments/assets/389966e3-b324-4084-bf42-d4f2e7393971)
+
+  ![image](https://github.com/user-attachments/assets/27513910-6066-473d-875d-1b06ef01fa73)
+
+  ![image](https://github.com/user-attachments/assets/c5994cec-7dfb-4ab6-898e-0cbb1c67ba22)
+
+  ![image](https://github.com/user-attachments/assets/393f03b8-df4a-4769-8aea-d8c67654257f)
+
+
+
+
+
+  
+
+
+
 
 
 - Ec2 created on AWS
