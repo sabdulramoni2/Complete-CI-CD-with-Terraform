@@ -50,11 +50,16 @@ This project demonstrates completes CICD with terraform.
   ```
 
 
-    ![image](https://github.com/user-attachments/assets/9759746d-d20d-4b3a-b924-76c327de3f6a)
+  ![image](https://github.com/user-attachments/assets/9759746d-d20d-4b3a-b924-76c327de3f6a)
 
 
 - Created Terraform configuration files to provision an ec2 server
+  ![image](https://github.com/user-attachments/assets/d39d2f97-415c-404e-ac8c-3356ec06f645)
+
 - Created entry-script.sh file to install docker, docker-compose and start containers through docker-compose command
+
+  ![image](https://github.com/user-attachments/assets/21e67452-c43c-43ae-9e7b-d4f197033f95)
+
 - Adjusted Jenkinsfile to include provision and deployment stage
   
   ![image](https://github.com/user-attachments/assets/a29efbf0-8406-4ad1-a251-141e2de38f79)
