@@ -41,9 +41,16 @@ This project demonstrates completes CICD with terraform.
 
 
 - Included docker login to be able to pull Docker Images from private Docker repository
-- Executed CI/CD pipeline successfully
 
   ![image](https://github.com/user-attachments/assets/d9c9f3fe-465a-4fc5-8810-a59c3e7535c0)
+
+- Executed CI/CD pipeline successfully
+
+  ![image](https://github.com/user-attachments/assets/c074f539-5b8c-4a9d-990d-7b9bc3c024f2)
+
+
+  ![image](https://github.com/user-attachments/assets/dfe42338-9af8-493f-a162-502d8b3e03bf)
+
 
 
 - Ec2 created on AWS
