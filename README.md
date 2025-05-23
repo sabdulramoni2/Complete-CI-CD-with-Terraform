@@ -37,9 +37,6 @@ This project demonstrates completes CICD with terraform.
 
 
 
-
-
-
 - Included docker login to be able to pull Docker Images from private Docker repository
 
   ![image](https://github.com/user-attachments/assets/d9c9f3fe-465a-4fc5-8810-a59c3e7535c0)
